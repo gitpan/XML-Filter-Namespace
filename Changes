@@ -1,0 +1,10 @@
+Revision history for Perl extension XML::Filter::Namespace.
+
+1.00  Wed Dec  4 13:02:06 GMT 2002
+	- Copied source from internal module, cleaned up.
+
+0.01  Tue Dec  3 17:41:02 2002
+	- original version; created by h2xs 1.22 with options
+		-AX -b 5.6.1 -n XML::Filter::Namespace
+
+# @(#) $Id: Changes,v 1.2 2002/12/04 13:05:14 dom Exp $

@@ -1,0 +1,10 @@
+# @(#) $Id: MANIFEST,v 1.2 2002/12/04 12:59:36 dom Exp $
+
+Changes
+MANIFEST
+Makefile.PL
+Namespace.pm
+README
+filtns
+t/1.t
+t/basic.t
