@@ -4,6 +4,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     NAME         => 'XML::Filter::Namespace',
     VERSION_FROM => 'lib/XML/Filter/Namespace.pm',
+    PL_FILES     => { },
     PREREQ_PM    => {
         'Class::Accessor'  => 0.17,
         'Test::More'       => 0,                # For tests.

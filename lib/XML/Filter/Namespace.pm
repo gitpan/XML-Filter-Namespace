@@ -7,7 +7,7 @@ use base qw( XML::SAX::Base Class::Accessor );
 use vars qw( $VERSION );
 
 # Manually maintained, this is the package's version number.
-$VERSION = '1.02';
+$VERSION = '1.03';
 
 sub start_document {
     my $self = shift;
@@ -207,7 +207,7 @@ Dominic Mitchell E<lt>cpan@semantico.comE<gt>
 
 =head1 VERSION
 
-@(#) $Id: Namespace.pm,v 1.7 2003/04/24 13:40:52 dom Exp $
+@(#) $Id: Namespace.pm,v 1.8 2003/04/27 18:41:40 dom Exp $
 
 =head1 LICENSE
 
