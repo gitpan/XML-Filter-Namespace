@@ -7,7 +7,7 @@ use base qw( XML::SAX::Base Class::Accessor );
 use vars qw( $VERSION );
 
 # Manually maintained, this is the package's version number.
-$VERSION = '1.00';
+$VERSION = '1.02';
 
 sub start_document {
     my $self = shift;
@@ -139,11 +139,23 @@ XML::Filter::Namespace - strip all but a single namespace
 
 =head1 SYNOPSIS
 
-  # Standard SAX Machines pipeline setup...
+  use XML::Filter::Namespace;
+
+  # The traditional way.
+  use XML::SAX::ParserFactory;
+  use XML::SAX::Writer;
+  my $w   = XML::SAX::Writer->new( Output => \*STDOUT );
+  my $xfn = XML::Filter::Namespace->new( Handler => $w );
+  $xfn->ns( 'urn:my-namespace' );
+  my $p = XML::SAX::ParserFactory->parser( Handler => $xfn );
+  $p->parse_uri( '-' );    # Take input from STDIN.
+
+  # The SAX Machines way.
+  use XML::SAX::Machines qw( Pipeline );
   my $strip = XML::Filter::Namespace->new;
   $strip->ns( 'urn:my-namespace' );
   my $m = Pipeline->new( $strip => \*STDOUT );
-  $m->parse_uri( "-" );
+  $m->parse_uri( '-' );    # Take input from STDIN.
 
 =head1 DESCRIPTION
 
@@ -183,7 +195,7 @@ tag.
 
 =head1 SEE ALSO
 
-XML::SAX::Base(3).
+L<XML::SAX::Base>(3), L<filtns>(1).
 
 =head1 BUGS
 
@@ -195,7 +207,7 @@ Dominic Mitchell E<lt>cpan@semantico.comE<gt>
 
 =head1 VERSION
 
-@(#) $Id: Namespace.pm,v 1.3 2002/12/04 14:30:33 dom Exp $
+@(#) $Id: Namespace.pm,v 1.7 2003/04/24 13:40:52 dom Exp $
 
 =head1 LICENSE
 

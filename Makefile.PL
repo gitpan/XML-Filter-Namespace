@@ -3,7 +3,7 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
     NAME         => 'XML::Filter::Namespace',
-    VERSION_FROM => 'Namespace.pm',             # finds $VERSION
+    VERSION_FROM => 'lib/XML/Filter/Namespace.pm',
     PREREQ_PM    => {
         'Class::Accessor'  => 0.17,
         'Test::More'       => 0,                # For tests.
@@ -11,6 +11,6 @@ WriteMakefile(
         'XML::SAX::Writer' => 0.44,             # For tests.
     },
     EXE_FILES     => [qw( filtns )],
-    ABSTRACT_FROM => 'Namespace.pm',            # retrieve abstract from module
+    ABSTRACT_FROM => 'lib/XML/Filter/Namespace.pm',
     AUTHOR => 'Dominic Mitchell <cpan@semantico.com>'
 );
